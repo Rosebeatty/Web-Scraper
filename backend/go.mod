@@ -10,6 +10,7 @@ require (
 	github.com/gocolly/colly v1.2.0
 	github.com/gocolly/colly/v2 v2.1.0
 	github.com/kennygrant/sanitize v1.2.4 // indirect
+	github.com/rs/cors v1.7.0
 	github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca // indirect
 	github.com/temoto/robotstxt v1.1.1 // indirect
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b // indirect

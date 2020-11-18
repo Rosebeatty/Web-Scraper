@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 function CircularProgressWithLabel(props) {
   return (
     <Box position="relative" display="inline-flex">
-      <CircularProgress style={{color:"white"}} variant="static" {...props} />
+      <CircularProgress style={{color:"white"}} variant="indeterminate" {...props} />
       <Box
         top={0}
         left={0}
@@ -18,9 +18,9 @@ function CircularProgressWithLabel(props) {
         alignItems="center"
         justifyContent="center"
       >
-        <Typography variant="caption" component="div" style={{color:"white"}}>{`${Math.round(
+        {/* <Typography variant="caption" component="div" style={{color:"white"}}>{`${Math.round(
           props.value,
-        )}%`}</Typography>
+        )}%`}</Typography> */}
       </Box>
     </Box>
   );
@@ -39,8 +39,8 @@ export default function CircularStatic() {
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
-    }, 800);
+      setProgress((prevProgress) => (prevProgress >= 100 ? 100 : prevProgress + 10));
+    }, 2000);
     return () => {
       clearInterval(timer);
     };

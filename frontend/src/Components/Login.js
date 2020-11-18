@@ -14,12 +14,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Headings(props) {
+export default function Login(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Heading Count</Title>
-      {props.heading.map(e => <h5 style={{margin:"1.25em auto"}} key={Math.random()}><span>{e.Level}: {e.Count}</span></h5> )}
+      <Title>Login</Title>
+      <p>{props.Login}</p>
     </React.Fragment>
   );
 }

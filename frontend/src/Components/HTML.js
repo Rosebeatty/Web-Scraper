@@ -14,12 +14,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Headings(props) {
+export default function HTML(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Heading Count</Title>
-      {props.heading.map(e => <h5 style={{margin:"1.25em auto"}} key={Math.random()}><span>{e.Level}: {e.Count}</span></h5> )}
+      <Title>HTML Version</Title>
+      <p>{props.html}</p>
     </React.Fragment>
   );
 }
