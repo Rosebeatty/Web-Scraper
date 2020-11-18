@@ -1,9 +1,9 @@
-# Web scraper
+# Web Scraper
 
 ## Description
 
-Web scraper collects data about any website's page title, links and headings.
-Created with Go, React, and Material UI.
+Web scraper collects the page title, login requirements, internal and external links and headings from any searched url.
+The app was created with Go, React, and Material UI.
 
 <br/> 
 
