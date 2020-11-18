@@ -1,25 +1,15 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Title from './Title';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
-
-const useStyles = makeStyles({
-  depositContext: {
-    flex: 1,
-  },
-});
-
 export default function Login(props) {
-  const classes = useStyles();
   return (
     <React.Fragment>
       <Title>Login</Title>
-      <p>{props.Login}</p>
+      { props.loading ? <div>loading</div> :
+        props.login === true ?
+            <p><b>Required</b> <br/>This may impact the number of accessible links</p> : props.login === false ? <p><b>Not Required</b></p>
+        : <p>Search a website to scrape data</p>
+      }
     </React.Fragment>
   );
 }

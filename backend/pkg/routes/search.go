@@ -51,8 +51,6 @@ func ScrapeURL(w http.ResponseWriter, r *http.Request) {
 
 	//Create a new collector which will be in charge of collect the data from HTML
 	c := colly.NewCollector(
-		// Allow visiting the same page multiple times
-		// colly.AllowURLRevisit(),
 		// // Allow crawling to be done in parallel / async
 		colly.Async(true),
 		colly.MaxDepth(2),
@@ -119,7 +117,6 @@ func ScrapeURL(w http.ResponseWriter, r *http.Request) {
 	})
 
 	detailCollector.OnResponse(func(r *colly.Response) {
-		// w.Write(r.Body)
 		res.HTML = append(res.HTML, string(r.Body))
 		link := Link{
 			url:    r.Request.URL,
