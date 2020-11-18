@@ -2,7 +2,7 @@
 
 ## Description
 
-Web scraper collects the page title, login requirements, internal and external links and headings from any searched url.
+Web scraper collects the page title, login requirements, internal and external links and headings from any website.
 The app is fully-responsive and created with Go, React, and Material UI.
 
 <br/> 
