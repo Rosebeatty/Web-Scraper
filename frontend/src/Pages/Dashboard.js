@@ -146,7 +146,6 @@ export default function Dashboard() {
                 setHTML(res.data[0].HTML)
                 setLoading(false)
                 setComplete(true)
-                console.log(res)
             }).catch(err => {
                 console.log(err)
             })
@@ -158,6 +157,14 @@ export default function Dashboard() {
         )
   }
 
+  const submitURL = (url) => {
+        setInput(
+        url
+        )
+        document.getElementById('submit').click()
+        
+  }
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -166,10 +173,10 @@ export default function Dashboard() {
                <Typography  variant="h6" color="inherit" style={{display:"inline-block"}} >
                   Web Scraper       
                </Typography>
-          <form className={classes.title} onSubmit={e =>sendData(e)}>
+          <form className={classes.title}  onSubmit={e =>sendData(e)}>
               <label style={{display:"none"}}></label>
               <input required onChange={handleInput} value={input} placeholder="Search any website URL" type="url" style={{padding:"0.6em", width:"35vw"}}/>
-              <button style={{padding:"0.6em"}} type="submit">Search</button>
+              <button style={{padding:"0.6em"}} id="submit" type="submit">Search</button>
           </form>
           { loading ?
           <IconButton>
@@ -177,11 +184,11 @@ export default function Dashboard() {
           </IconButton>
           : <IconButton>
                 { complete ?
-                    <Typography variant="caption" component="div" style={{color:"white", padding:"0px 12px"}}>{`${Math.round(
+                    <Typography variant="caption" component="div" style={{color:"white"}}>{`${Math.round(
                     100,
                     )}%`}
                     </Typography>
-                    : <Typography variant="caption" component="div" style={{color:"white", padding:"0px 12px"}}>{`${Math.round(
+                    : <Typography variant="caption" component="div" style={{color:"white"}}>{`${Math.round(
                     0,
                     )}%`}
                     </Typography>
@@ -221,7 +228,7 @@ export default function Dashboard() {
             {/* Recent Searches */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Recent recent={urls} loading={loading} />
+                <Recent submitURL={submitURL} recent={urls} loading={loading} />
               </Paper>
             </Grid>
           </Grid>

@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Recent(props) {
+  const [color, setColor] = React.useState("");
   let links = props.recent.slice(-6)
   return (
     <React.Fragment>
@@ -23,7 +24,7 @@ export default function Recent(props) {
           <TableBody>
             {links.map((url) => (
               <TableRow key={Math.random()}>
-                <TableCell style={{textAlign:"center"}}>{url}</TableCell>
+                <TableCell id="link" style={{textAlign:"center", cursor:"pointer"}} onClick={() => props.submitURL(url)}><span>{url}</span></TableCell>
               </TableRow>
             ))}
           </TableBody>

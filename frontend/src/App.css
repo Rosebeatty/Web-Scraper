@@ -28,15 +28,9 @@
   color: #61dafb;
 }
 
-/* .pie {
-    position: relative;
-    cursor: default;
-    width: 480px;
-    height: 210px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-} */
+#link :hover {
+  color:blue
+}
 
 
 @keyframes App-logo-spin {
