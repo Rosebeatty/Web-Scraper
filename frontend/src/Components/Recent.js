@@ -6,12 +6,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 
-const useStyles = makeStyles((theme) => ({
-  seeMore: {
-    marginTop: theme.spacing(3),
-  },
-}));
-
 export default function Recent(props) {
   const [color, setColor] = React.useState("");
   let links = props.recent.slice(-6)
